@@ -139,7 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Algorithm_Assignment1_1.cpp" />
+    <ClCompile Include="2021314533_Knight.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="input_1.txt" />
