@@ -110,8 +110,10 @@ int main(int argc, char** argv)
     {
         fscanf(fp_input, "%c", &scan_char); // reads repetitively and receive at scan_char
         if ( feof(fp_input) ) break; // end of file (file read failed)
-        if (scan_char == '\n') continue; // prevents errors resulting from automatic newline addition(vim / echo cmd)
-
+        if (scan_char == '\n') {
+            scan_char = 'a';
+            continue; // prevents errors resulting from automatic newline addition(vim / echo cmd)
+        }
         switch (scan_char)
         {
         case '(':
