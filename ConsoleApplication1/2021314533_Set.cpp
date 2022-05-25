@@ -18,7 +18,7 @@ public:
 	Graph(const char* filename)
 	{
 		FILE* input_p = fopen(filename, "r");
-		if (input_p == nullptr)	
+		if (input_p == NULL)	
 			exit(EXIT_FAILURE);
 		fscanf(input_p, "%d", &n_vertex);
 		fscanf(input_p, "%d", &n_op);
@@ -53,7 +53,7 @@ public:
 	{
 		return op_given;
 	}
-	vector<pair<int, T>> getSet()
+	std::vector< pair<int, T> > getSet()
 	{
 		return sets;
 	}
@@ -117,7 +117,7 @@ public:
 	void writeAnswer(Graph<T> &_g, char* output_File)
 	{
 		FILE* output_file_p = fopen(output_File, "w");
-		if (output_file_p == nullptr)
+		if (output_file_p == NULL)
 			exit(EXIT_FAILURE);
 		int g_n_op = _g.getNOP();
 		int* g_op_given = _g.getOPGiven();
@@ -152,6 +152,11 @@ public:
 
 int main(int argc, char** argv)
 {
+	if (argc != 3) {
+		printf("not enough arguments\n");
+		exit(EXIT_FAILURE);
+	}
+
 	Graph<int> input_Graph(argv[1]);
 	Disjoint_Set<int> ds(input_Graph.getNVertex());
 	ds.writeAnswer(input_Graph, argv[2]);
