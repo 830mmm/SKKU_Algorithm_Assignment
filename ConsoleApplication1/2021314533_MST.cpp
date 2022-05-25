@@ -10,7 +10,6 @@ class Graph2
 private:
 	int n_vertex;
 	int n_edge;
-	// int* op_given;
 
 	std::vector< pair<int, T> > *sets;
 
@@ -43,7 +42,6 @@ public:
 	}
 	~Graph2()
 	{
-		// delete[] op_given;
 		delete[] sets;
 	}
 
@@ -190,8 +188,7 @@ T Kruskal_Cost(Graph2<T>& _g)
 int main(int argc, char** argv)
 {
 	Graph2<int> input_Graph(argv[1]);
-	//Disjoint_Set2<int> ds(input_Graph.getNVertex());
-	//ds.writeAnswer(input_Graph, argv[2]);
+
 	int cost = Kruskal_Cost<int>(input_Graph);
 
 	FILE* outputfile_p = fopen(argv[2], "w");
